@@ -1,0 +1,79 @@
+# NovaArcade Rubric
+
+1. The website contains four HTML pages named index.html, library.html, game.html, and leaderboard.html.
+
+2. The same navigation bar markup appears on index.html, library.html, game.html, and leaderboard.html.
+
+3. The navigation bar contains a site logo, a link labelled "Home", a link labelled "Library", a link labelled "Leaderboard", and a search icon.
+
+4. The same footer markup appears on index.html, library.html, game.html, and leaderboard.html.
+
+5. The footer contains the site name, a text link labelled "About", a text link labelled "Contact", a text link labelled "Terms", and a copyright line.
+
+6. The home page contains a hero banner with a background image, a heading reading "Play Free Games Instantly", and a button labelled "Browse Games" that links to library.html.
+
+7. The home page contains a row labelled "Featured Games" with exactly 4 game cards.
+
+8. The home page contains a row labelled "New Releases" with exactly 4 game cards, corresponding to the 4 entries in games.json with the most recent dateAdded values.
+
+9. Each game card on the home page displays the thumbnail image, title, category tag, and a "Play Now" button that links to game.html with that game's id in the query string.
+
+10. The home page contains a category quick link for each category present in games.json, and clicking a link navigates to library.html with that category set in the category query parameter.
+
+11. The library page uses a two column layout with a filter sidebar and a game grid.
+
+12. The filter sidebar contains one checkbox for each category found in games.json.
+
+13. The filter sidebar contains a sort dropdown with the options "Newest First", "Most Played", and "Alphabetical".
+
+14. The filter sidebar contains a "Clear Filters" button that unchecks all category checkboxes and resets the sort dropdown to "Newest First".
+
+15. Each card in the library game grid displays the thumbnail image, title, category tag, and a play count formatted as "X plays".
+
+16. When no games match the active filters, the game grid displays the text "No games match your filters".
+
+17. The game detail page reads the id value from the URL query string.
+
+18. The game detail page displays data from the games.json entry whose id matches the URL query string.
+
+19. When no entry in games.json matches the id in the URL, the game detail page displays the text "Game not found".
+
+20. When no entry in games.json matches the id in the URL, the game detail page displays a button labelled "Back to Library" that links to library.html.
+
+21. The game detail page contains a title bar showing the game title and its category tag.
+
+22. The game detail page contains a description panel showing the description field of the matching games.json entry.
+
+23. The game detail page contains a "How to Play" panel that renders the instructions field of the matching games.json entry as a numbered list.
+
+24. The game detail page contains a related games row showing up to 4 other games from games.json that share the same category as the current game.
+
+25. The game detail page embeds the embedUrl of the matching games.json entry inside an iframe with a 16 to 9 aspect ratio container.
+
+26. The iframe on the game detail page displays the text "Loading game..." until the iframe's load event fires.
+
+27. When the embedded iframe sends a postMessage containing a score field higher than the value stored in localStorage under novaarcade_score_<gameId>, the stored value is updated to the new score.
+
+28. The game detail page contains a button labelled "Fullscreen" that calls requestFullscreen on the iframe element when clicked.
+
+29. Clicking the search icon in the navigation bar expands a text input field.
+
+30. Pressing Enter in the expanded search input navigates to library.html with the entered text in a query parameter named q.
+
+31. When the library page loads with a q query parameter, the game grid only shows games whose title field contains the q value, ignoring letter case.
+
+32. When both a q query parameter and one or more checked category filters are active, the game grid only shows games that satisfy both conditions.
+
+33. A button labelled "Sign In" in the navigation bar opens a modal containing a text input labelled "Display Name".
+
+34. The sign in modal contains a button labelled "Save".
+
+35. Clicking "Save" in the sign in modal stores the entered name in localStorage under the key novaarcade_username.
+
+36. After a name is saved, the "Sign In" button in the navigation bar is replaced with the saved name.
+
+37. Each game card and the game detail title bar contain a heart shaped icon button that toggles the game's id in a JSON array stored in localStorage under the key novaarcade_favourites.
+
+38. When at least one localStorage key begins with novaarcade_score_, the leaderboard page displays a table with the columns "Game", "Your Best Score", and "Category" in that order, sorted in descending order by score.
+
+39. When no localStorage key begins with novaarcade_score_, the leaderboard page displays the text "No scores yet. Go play some games!"

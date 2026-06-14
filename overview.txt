@@ -1,0 +1,16 @@
+NovaArcade - Project Overview
+
+NovaArcade is a four page static website built with plain HTML, CSS, and vanilla JavaScript. No backend server, database, or build tools are required. The site runs by opening index.html in a browser or by hosting the folder as static files.
+
+The four pages are:
+- A home page with a hero banner, a Featured Games row, a New Releases row, and category quick links.
+- A library page showing all games as a grid of cards, with a search bar and a category/sort filter sidebar.
+- A game detail page that shows a single game's description, instructions, an embedded playable version of the game, and related games from the same category.
+- A leaderboard page showing the player's best score per game, sorted highest to lowest.
+
+All game information (titles, categories, thumbnails, descriptions, instructions, and the embeddable game links) comes from a single games.json file. All personal data, such as scores, favourites, and the player's chosen display name, is stored locally in the browser using localStorage. Nothing is sent to a server.
+
+The site follows a fixed dark theme with a defined colour palette, two Google Fonts (Orbitron for headings and Inter for body text), and Font Awesome icons. The layout must adapt across desktop, tablet, and mobile screen sizes, including a collapsible filter sidebar and a hamburger navigation menu on mobile.
+
+Goal
+The finished site should feel like a small, polished arcade portal: easy to browse, easy to search and filter, and able to remember a visitor's favourite games, display name, and best scores between visits, all without any server side component. This document, along with instruction.md and the PRD, is the source of truth for what gets built, what the seller is briefed on, and what the rubric checks against.

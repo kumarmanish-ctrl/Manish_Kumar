@@ -1,0 +1,47 @@
+NovaArcade - Scope of Work
+
+In Scope
+
+1. Pages
+- Build index.html (home page) with a hero banner, a "Featured Games" row of exactly 4 cards, a "New Releases" row of exactly 4 cards, and category quick links.
+- Build library.html with a two column layout: a filter sidebar (category checkboxes, sort dropdown, "Clear Filters" button) and a game grid.
+- Build game.html that reads a game id from the URL, displays that game's title, category, embedded player, description, "How to Play" instructions, and a related games row.
+- Build leaderboard.html showing a sorted table of the player's best scores, with an empty state message when no scores exist.
+
+2. Shared Components
+- A navigation bar (logo, links to Home/Library/Leaderboard, search icon) identical across all four pages.
+- A footer (site name, About/Contact/Terms links, copyright line) identical across all four pages.
+
+3. Data
+- Create data/games.json containing at least 12 game entries across at least 3 categories, with fields for id, title, category, thumbnail, embedUrl, description, instructions, dateAdded, and playCount.
+
+4. Core Features
+- Embedded game player: iframe with 16:9 aspect ratio, "Loading game..." placeholder, and a "Fullscreen" button.
+- Score capture: listen for postMessage score events from the embedded game and store the player's best score per game in localStorage.
+- Search: expandable search bar in the navigation bar that filters the library grid by title (case insensitive).
+- Filters: category checkboxes and sort dropdown ("Newest First", "Most Played", "Alphabetical") on the library page, combinable with search.
+- Local sign in: a "Sign In" modal that saves and displays a player's chosen display name using localStorage.
+- Favourites: a heart icon toggle on game cards and the game detail page, with filled/outline states stored in localStorage.
+- Leaderboard table: "Game", "Your Best Score", "Category" columns, sorted by score descending, with an empty state.
+
+5. Visual Design
+- Implement the defined dark colour palette using CSS variables.
+- Load and apply Orbitron (headings) and Inter (body text) from Google Fonts.
+- Style primary buttons with the specified accent colours, rounded corners, and hover transition.
+
+6. Responsive Layout
+- Desktop (1024px+), tablet (768px-1023px), and mobile (below 768px) layouts as specified, including a collapsible filter sidebar and a hamburger navigation menu on mobile.
+
+7. Code Organisation
+- Follow the specified file structure (css/, js/, data/, assets/).
+- Place shared logic (card rendering, localStorage helpers, navigation rendering) in main.js, reused across page specific scripts.
+- Use CSS custom properties for the colour palette.
+- Optimise images (jpg/png/webp, under 500KB each) and apply lazy loading to below-the-fold thumbnails.
+
+Out of Scope
+- User authentication, passwords, accounts, or server side sessions beyond the local display name.
+- Payment, purchase, or in app currency systems.
+- Any backend server, database, or API beyond reading the static games.json file.
+- Multiplayer or real time features.
+- Building any games from scratch; all games are existing publicly playable HTML5 games embedded via iframe.
+- Analytics, tracking scripts, or third party advertising integrations.
